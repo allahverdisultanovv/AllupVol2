@@ -1,0 +1,36 @@
+﻿@using AllupVol2.ViewModels
+@model LoginVM
+<section class="register-area pt-10">
+    <div class="container-fluid custom-container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="login-register-wrapper mt-30">
+                    <h4 class="allup-title">Login  your Account</h4>
+
+                    <form method="post">
+                        <div class="single-form">
+                            <label asp-for="UserOrEmail">User or Email</label>
+                            <input asp-for="UserOrEmail"  placeholder=" User or Email">
+                            <span class="text-danger" asp-validation-for="UserOrEmail"></span>
+                        </div>
+                     
+                        <div class="single-form">
+                            <label asp-for="Password">Password</label>
+                            <input asp-for="Password"  placeholder=" Password">
+                            <span class="text-danger" asp-validation-for="Password"></span>
+                        </div>
+                        <div class="single-form">
+                            <label asp-for="IsPersistant" >Remember me</label>
+                            <input asp-for="IsPersistant" style="width:20px;height:20px; margin-left:15px;">
+                            <span class="text-danger" asp-validation-for="IsPersistant"></span>
+                        </div>
+
+                        <div class="single-form">
+                            <button class="main-btn main-btn-2">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
