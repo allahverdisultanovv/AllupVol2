@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AllupVol2.Areas.Admin.ViewModels
 {
-    public class CreateProductVM
+    public class UpdateProductVM
     {
         public string Name { get; set; }
         [Required]
@@ -14,14 +14,10 @@ namespace AllupVol2.Areas.Admin.ViewModels
         public decimal? Tax { get; set; }
         public string ProductCode { get; set; }
         public string Description { get; set; }
-        
-        public int DisCountPercentage { get; set; }
+        [Required]
+        public double? DisCountPercentage { get; set; }
         [Required(ErrorMessage = "Category daxil et")]
         public int? CategoryId { get; set; }
         public List<Category>? Categories { get; set; }
-        //public List<int>? TagIds { get; set; }
-        //public List<Tag>? Tags { get; set; }
-        //public List<int>? BrandIds { get; set; }
-        //public List<Brand>? Brands { get; set; }
     }
 }

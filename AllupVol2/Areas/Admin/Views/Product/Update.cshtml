@@ -1,0 +1,77 @@
+﻿@using AllupVol2.Areas.Admin.ViewModels
+@using AllupVol2.Models
+@model UpdateProductVM
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+
+            <p class="card-description">
+                Create Product
+            </p>
+            <form class="forms-sample" method="post">
+
+                <div class="form-group">
+                    <label asp-for="Name">Name</label>
+                    <input asp-for="Name" class="form-control" placeholder="Name">
+                    <span class="text-danger" asp-validation-for="Name"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="Title">Title</label>
+                    <input asp-for="Title" class="form-control" placeholder="Title">
+                    <span class="text-danger" asp-validation-for="Title"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="Price">Price</label>
+                    <input asp-for="Price" class="form-control" placeholder="Price">
+                    <span class="text-danger" asp-validation-for="Price"></span>
+
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="Tax">Tax</label>
+                    <input asp-for="Tax" class="form-control" placeholder="Tax">
+                    <span class="text-danger" asp-validation-for="Tax"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProductCode">ProductCode</label>
+                    <input asp-for="ProductCode" class="form-control" placeholder="ProductCode">
+                    <span class="text-danger" asp-validation-for="ProductCode"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description">Description</label>
+                    <input asp-for="Description" class="form-control" placeholder="Description">
+                    <span class="text-danger" asp-validation-for="Description"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="DisCountPercentage">DisCountPercentage</label>
+                    <input asp-for="DisCountPercentage" class="form-control" placeholder="DisCountPercentage">
+                    <span class="text-danger" asp-validation-for="DisCountPercentage"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="CategoryId">Tax</label>
+                    <select asp-for="CategoryId" class="form-control" asp-items="new SelectList(Model.Categories,nameof(Category.Id),nameof(Category.Name))">
+                    </select>
+                    <span class="text-danger" asp-validation-for="CategoryId"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="Availability">Availability</label>
+                    <input asp-for="Availability" placeholder="Availability">
+                    <span class="text-danger" asp-validation-for="Availability"></span>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary me-2">Submit</button>
+                <button class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

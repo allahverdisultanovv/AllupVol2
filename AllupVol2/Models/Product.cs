@@ -13,10 +13,10 @@
         public decimal DisCountPrice { get; set; }
         //relational
         public int? CategoryId { get; set; }
-        public Category Category { get; set; }
-        public List<ProductBrand> ProductBrands { get; set; }
-        public List<ProductTag> ProductTags { get; set; }
-        public List<ProductImage> ProductImages { get; set; }
+        public Category? Category { get; set; }
+        public List<ProductBrand>? ProductBrands { get; set; }
+        public List<ProductTag>? ProductTags { get; set; }
+        public List<ProductImage>? ProductImages { get; set; }
 
 
     }
