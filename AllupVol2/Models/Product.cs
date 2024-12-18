@@ -9,7 +9,8 @@
         public decimal Tax { get; set; }
         public string ProductCode { get; set; }
         public string Description { get; set; }
-
+        public double DisCountPercentage { get; set; } = 0;
+        public decimal DisCountPrice { get; set; }
         //relational
         public int? CategoryId { get; set; }
         public Category Category { get; set; }

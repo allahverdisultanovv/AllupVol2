@@ -1,5 +1,7 @@
 using AllupVol2.DAL;
 using AllupVol2.Models;
+using AllupVol2.Services.Implementations;
+using AllupVol2.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,6 +11,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("default"))
 );
+builder.Services.AddScoped<ILayoutService,LayoutService>();
 builder.Services.AddIdentity<AppUser, IdentityRole>(opt =>
 {
 

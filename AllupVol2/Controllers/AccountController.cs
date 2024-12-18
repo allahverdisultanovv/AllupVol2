@@ -1,4 +1,5 @@
 ﻿using AllupVol2.Models;
+using AllupVol2.Utilities.Enums;
 using AllupVol2.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -10,11 +11,13 @@ namespace AllupVol2.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public AccountController(UserManager<AppUser> userManager,SignInManager<AppUser> signInManager)
+        public AccountController(UserManager<AppUser> userManager,SignInManager<AppUser> signInManager,RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
         }
         public IActionResult Register() 
         {
@@ -75,6 +78,8 @@ namespace AllupVol2.Controllers
                     return View();
                 }
             }
+            await _userManager.AddToRoleAsync(user, UserRole.Member.ToString());
+
             await _signInManager.SignInAsync(user, false);
             return RedirectToAction("Index","Home");
         }
@@ -116,5 +121,17 @@ namespace AllupVol2.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index","Home");
         }
+
+        //public async Task<IActionResult> CreateRoles()
+        //{
+        //    foreach (UserRole role in Enum.GetValues(typeof(UserRole)))
+        //    {
+        //       if (!await _roleManager.RoleExistsAsync(role.ToString()))
+        //        {
+        //           await _roleManager.CreateAsync(new IdentityRole() { Name = role.ToString() });
+        //      }
+        //   }
+        //    return RedirectToAction($"index", "Home");
+        //}
     }
 }

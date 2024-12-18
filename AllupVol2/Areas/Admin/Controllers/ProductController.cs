@@ -5,8 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AllupVol2.Areas.Admin.Controllers
 {
-    [Area("Admin")]
-    public class ProductController : Controller
+    public class ProductController : BaseController
     {
         private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _env;

@@ -7,8 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AllupVol2.Areas.Admin.Controllers
 {
-    [Area("Admin")]
-    public class BrandController : Controller
+    public class BrandController : BaseController
     {
         private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _env;

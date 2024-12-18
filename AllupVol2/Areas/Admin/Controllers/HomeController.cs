@@ -5,8 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AllupVol2.Areas.Admin.Controllers
 {
-    [Area("Admin")]
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly AppDbContext _context;
 
