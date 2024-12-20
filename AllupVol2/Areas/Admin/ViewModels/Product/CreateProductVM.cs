@@ -14,7 +14,9 @@ namespace AllupVol2.Areas.Admin.ViewModels
         public decimal? Tax { get; set; }
         public string ProductCode { get; set; }
         public string Description { get; set; }
-        
+        public IFormFile MainPhoto { get; set; }
+        public IFormFile HoverPhoto { get; set; }
+
         public int DisCountPercentage { get; set; }
         [Required(ErrorMessage = "Category daxil et")]
         public int? CategoryId { get; set; }

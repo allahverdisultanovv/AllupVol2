@@ -9,8 +9,19 @@
             <p class="card-description">
                 Create Product
             </p>
-            <form class="forms-sample" method="post">
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="MainPhoto">Photo</label>
+                    <input asp-for="MainPhoto" class="form-control" placeholder="MainPhoto" accept="image/*">
+                    <span class="text-danger" asp-validation-for="MainPhoto"></span>
 
+                </div>
+                <div class="form-group">
+                    <label asp-for="HoverPhoto">Photo</label>
+                    <input asp-for="HoverPhoto" class="form-control" placeholder="HoverPhoto" accept="image/*">
+                    <span class="text-danger" asp-validation-for="HoverPhoto"></span>
+
+                </div>
                 <div class="form-group">
                     <label asp-for="Name">Name</label>
                     <input asp-for="Name" class="form-control" placeholder="Name">
